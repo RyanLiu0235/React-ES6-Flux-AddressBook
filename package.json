@@ -4,7 +4,7 @@
   "description": "address book with React and Flux",
   "main": "index.jsx",
   "scripts": {
-    "build": "webpack --watch",
+    "build": "webpack -w -d",
     "start": "webpack-dev-server --inline --port 4000 --hostname 0.0.0.0"
   },
   "author": "liucheng",
