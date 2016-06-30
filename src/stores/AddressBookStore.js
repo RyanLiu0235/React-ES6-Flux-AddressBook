@@ -5,9 +5,9 @@ import assign from 'object-assign';
 
 let AddressBook = {
     1467190265261: {
-        name: '刘成',
+        name: 'Hubery',
         address: '湖北省武汉市洪山区光谷理想城',
-        number: 13080680028
+        number: 130000000
     }
 };
 let CHANGE_EVENT = 'change';
