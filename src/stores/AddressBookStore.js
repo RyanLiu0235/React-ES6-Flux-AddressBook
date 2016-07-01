@@ -1,25 +1,36 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import { EventEmitter } from 'events';
 import AddressBookConstants from '../constants/AddressBookConstants';
-import assign from 'object-assign';
 
+// 添加初始数据
 let AddressBook = {
     1467190265261: {
         name: 'Hubery',
-        address: '湖北省武汉市洪山区光谷理想城',
+        address: '湖北省武汉市',
         number: 130000000
     }
 };
+
 let CHANGE_EVENT = 'change';
 
+/**
+ * 保存数据
+ * @param  {[number]} id   [数据对应ID]
+ * @param  {[object]} info [数据详情]
+ */
 function save(id, info) {
     AddressBook[id] = info;
 }
+
+/**
+ * 删除数据
+ * @param  {[number]} _id [删除数据对应的ID]
+ */
 function del(_id) {
     delete AddressBook[_id];
 }
 
-let AddressBookStore = assign({}, EventEmitter.prototype, {
+const AddressBookStore = Object.assign({}, EventEmitter.prototype, {
     emitChange: function() {
         this.emit(CHANGE_EVENT);
     },

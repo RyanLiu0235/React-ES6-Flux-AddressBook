@@ -1,9 +1,8 @@
-import AppDispatcher, { dispatch } from '../dispatcher/AppDispatcher';
+import AppDispatcher from '../dispatcher/AppDispatcher';
 import AddressBookConstants from '../constants/AddressBookConstants';
 
-let AddressBookActions = {
+const AddressBookActions = {
 	save: function(id, info) {
-		
 		AppDispatcher.dispatch({
 			actionType: AddressBookConstants.SAVE,
 			id: id,
@@ -12,7 +11,6 @@ let AddressBookActions = {
 	},
 
 	del: function(_id) {
-		console.log(_id)
 		AppDispatcher.dispatch({
 			actionType: AddressBookConstants.DEL,
 			_id: _id
